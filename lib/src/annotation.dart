@@ -7,19 +7,31 @@ class Field {
   const Field({this.name});
 }
 
-class Date extends Field {
-  const Date({String name}) : super(name: name);
+class Date {
+  final String name;
+  const Date({this.name});
 }
 
 class Time extends Field {
-  const Time({String name}) : super(name: name);
+  final String name;
+
+  const Time({this.name}) : super(name: name);
 }
 
-class ManyToOne extends Field {
+class RelationshipField {
+  final String name;
   final String displayField;
-  const ManyToOne(String this.displayField, {String name}) : super(name: name);
+  const RelationshipField(this.displayField, {this.name});
 }
 
-class OneToMany extends Field {
-  const OneToMany(String displayField, {String name}) : super(name: name);
+class ManyToOne implements RelationshipField {
+  final String name;
+  final String displayField;
+  const ManyToOne(this.displayField, {String this.name});
+}
+
+class OneToMany {
+  final String name;
+  final String displayField;
+  const OneToMany(this.displayField, {String this.name});
 }
