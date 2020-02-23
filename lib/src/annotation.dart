@@ -35,3 +35,9 @@ class OneToMany {
   final String displayField;
   const OneToMany(this.displayField, {String this.name});
 }
+
+class ManyToMany {
+  final String name;
+  final String displayField;
+  const ManyToMany(this.displayField, {String this.name});
+}
